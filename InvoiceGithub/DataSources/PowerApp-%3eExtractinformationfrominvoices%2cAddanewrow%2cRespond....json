@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "61fb777e-0cdc-45ec-83fd-b978585071fd",
+    "Name": "PowerApp->Extractinformationfrominvoices,Addanewrow,Respond...",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "36e14546-1a64-ee11-8df0-0022486ea3eb"
+  }
+]

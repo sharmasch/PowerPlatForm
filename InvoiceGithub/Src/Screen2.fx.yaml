@@ -1,0 +1,79 @@
+"Screen2 As screen.'layout_Offline_ver1.0'":
+
+    ScreenContainer1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer1 As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =75
+            LayoutGap: =10
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =16
+            PaddingRight: =16
+            ZIndex: =2
+
+            AppName1 As label:
+                ContentLanguage: ="Add the name of your app"
+                FillPortions: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Lighter
+                Height: =75
+                LayoutMinWidth: =280
+                PaddingLeft: =10
+                Size: =16
+                Text: ="Add the name of your app"
+                Tooltip: ="Add the name of your app"
+                Width: =280
+                X: =1
+                ZIndex: =3
+
+            "'Offline sync Icon1' As icon.Globe":
+                AccessibleLabel: ="Offline sync status icon"
+                AlignInContainer: =AlignInContainer.Stretch
+                Icon: |-
+                    =Switch(Connection.Sync,
+                       ConnectionSync.Connected, Icon.Globe, 
+                       ConnectionSync.ConnectedWithWarning, Icon.GlobeWarning,
+                       ConnectionSync.ConnectedPendingUpsync, Icon.GlobeChangesPending,
+                       ConnectionSync.ConnectedError, Icon.GlobeError,
+                       ConnectionSync.ConnectedRefresh, Icon.GlobeRefresh,
+                       ConnectionSync.NotConnected, Icon.GlobeNotConnected, 
+                       ConnectionSync.NotConnectedWithWarning, Icon.GlobeWarning,
+                       ConnectionSync.NotConnectedPendingUpsync, Icon.GlobeChangesPending,
+                       ConnectionSync.NotConnectedSyncError, Icon.GlobeError)
+                LayoutMinHeight: =32
+                OnSelect: |-
+                    =Switch(Connection.Sync,
+                       ConnectionSync.Connected, Notify("Your device is connected to the network, and your app is ready to work offline.",NotificationType.Success), 
+                       ConnectionSync.ConnectedWithWarning, Notify(Connection.LastSyncMessage,NotificationType.Warning),
+                       ConnectionSync.ConnectedPendingUpsync, Notify("Some data on your device must be synchronized with the server.",NotificationType.Warning),
+                       ConnectionSync.ConnectedError, Notify(Connection.LastSyncMessage,NotificationType.Error),
+                       ConnectionSync.ConnectedRefresh, Notify("Your app is currently synchronizing data with the server.",NotificationType.Information),
+                       ConnectionSync.NotConnected, Notify("Your device is not connected to the network, but you can keep using this app.",NotificationType.Success), 
+                       ConnectionSync.NotConnectedWithWarning, Notify(Connection.LastSyncMessage,NotificationType.Warning),
+                       ConnectionSync.NotConnectedPendingUpsync, Notify("Some data on your device must be synchronized with the server. Reconnect to the network to synchronize.",NotificationType.Warning),
+                       ConnectionSync.NotConnectedSyncError, Notify(Connection.LastSyncMessage,NotificationType.Error))
+                TabIndex: =0
+                Tooltip: =If(Connection.Connected,"Connected","Offline")
+                Width: =32
+                ZIndex: =4
+
+        MainSectionContainer1 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =20
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =5
+

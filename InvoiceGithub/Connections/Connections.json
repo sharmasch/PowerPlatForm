@@ -1,0 +1,63 @@
+{
+  "69d18df1-4cfa-464a-b8ed-0354fbca1029": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1653/1.0.1653.3403/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "a99e1028-0633-4e98-9e3c-3e9533a0fae9": {
+          "value": "shared_commondataserviceforapps"
+        },
+        "workflowEntityId": {
+          "value": "36e14546-1a64-ee11-8df0-0022486ea3eb"
+        },
+        "workflowName": {
+          "value": "4fcb9f40-e6d0-1f59-400c-38fc097ef2de"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_commondataserviceforapps": {
+          "value": "a99e1028-0633-4e98-9e3c-3e9533a0fae9"
+        },
+        "workflowEntityId": {
+          "value": "36e14546-1a64-ee11-8df0-0022486ea3eb"
+        },
+        "workflowName": {
+          "value": "4fcb9f40-e6d0-1f59-400c-38fc097ef2de"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "PowerApp->Extractinformationfrominvoices,Addanewrow,Respond..."
+    ],
+    "dependencies": {
+      "shared_commondataserviceforapps": "a99e1028-0633-4e98-9e3c-3e9533a0fae9"
+    },
+    "dependents": [],
+    "id": "69d18df1-4cfa-464a-b8ed-0354fbca1029"
+  },
+  "a99e1028-0633-4e98-9e3c-3e9533a0fae9": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Premium",
+      "bypassConsent": true,
+      "displayName": "Microsoft Dataverse",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1651/1.0.1651.3382/commondataserviceforapps/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "69d18df1-4cfa-464a-b8ed-0354fbca1029"
+    ],
+    "id": "a99e1028-0633-4e98-9e3c-3e9533a0fae9"
+  }
+}
